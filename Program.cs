@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
@@ -63,4 +64,11 @@ bool MooseAsks(string question)
 }
 
 bool isTrue = MooseAsks("Is Canada real?");
-Console.WriteLine(isTrue);
+if (isTrue)
+{
+    MooseSays("Really? It seem very unlikely.");
+}
+else
+{
+    MooseSays("I  K N E W  I T  ! ! !");
+}
