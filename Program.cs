@@ -4,65 +4,62 @@ Main();
 
 void Main()
 {
+    // Display welcome message
     Console.WriteLine("Welcome tothe Enthusiastic Moose Simulator!");
     Console.WriteLine("--------------------------------------------");
     Console.WriteLine();
-
+    // Function to display moose art
     void MooseSays(string message)
     {
-        Console.WriteLine($@"
-                                        _.--^^^--,
-                                        .'          `\
-    .-^^^^^^-.                      .'              |
-    /          '.                   /            .-._/
-    |             `.                |             |
-    \              \          .-._ |          _   \
-    `^^'-.         \_.-.     \   `          ( \__/
-            |             )     '=.       .,   \
-        /             (         \     /  \  /
-        /`               `\        |   /    `'
-        '..-`\        _.-. `\ _.__/   .=.
-            |  _    / \  '.-`    `-.'  /
-            \_/ |  |   './ _     _  \.'
-                '-'    | /       \ |
-                        |  .-. .-.  |
-                        \ / o| |o \ /
-                        |   / \   |    {message}
-                        / `^`   `^` \
-                        /             \
-                        | '._.'         \
-                        |  /             |
-                        \ |             |
-                        ||    _    _   /
-                        /|\  (_\  /_) /
-                        \ \'._  ` '_.'
-                        `^^` `^^^`
-        ");
+        string mooseArt = @"
+                                    _.--^^^--,
+                                    .'          `\
+.-^^^^^^-.                      .'              |
+/          '.                   /            .-._/
+|             `.                |             |
+\              \          .-._ |          _   \
+`^^'-.         \_.-.     \   `          ( \__/
+        |             )     '=.       .,   \
+    /             (         \     /  \  /
+    /`               `\        |   /    `'
+    '..-`\        _.-. `\ _.__/   .=.
+        |  _    / \  '.-`    `-.'  /
+        \_/ |  |   './ _     _  \.'
+            '-'    | /       \ |
+                    |  .-. .-.  |
+                    \ / o| |o \ /
+                    |   / \   |    " + message + @"
+                    / `^`   `^` \
+                    /             \
+                    | '._.'         \
+                    |  /             |
+                    \ |             |
+                    ||    _    _   /
+                    /|\  (_\  /_) /
+                    \ \'._  ` '_.'
+                    `^^` `^^^`
+";
+        Console.WriteLine(mooseArt);
     }
 
 
     MooseSays("H I, I'M  E N T H U S I A S T I C !");
     MooseSays("I really am enthusiastic!");
 
+    // Function that gets Y or N answer from the user 
     bool MooseAsks(string question)
     {
-        Console.Write($"{question} (Y/N): ");
+       Console.Write($"{question} (Y/N): ");
         string answer = Console.ReadLine().ToLower();
-
+        // Keep asking until a valie answer is given (Y or N)
         while (answer != "y" && answer != "n")
         {
             Console.Write($"{question} (Y/N): ");
             answer = Console.ReadLine().ToLower();
         }
 
-        if (answer == "y")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        // Return true for "yes" and false for "no"
+        return answer == "y";
 
     }
 
